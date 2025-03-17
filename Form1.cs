@@ -18,13 +18,22 @@ namespace Nasledovanie
                 switch (rnd.Next() % 3) // генерирую случайное число от 0 до 2 (ну остаток от деления на 3)
                 {
                     case 0:
-                        this.tanksList.Add(new LightTank());
+                        this.tanksList.Add(new LightTank
+                        {
+                            TankWeight = 5 + rnd.Next() % 41
+                        });
                         break;
                     case 1:
-                        this.tanksList.Add(new MiddleTank());
+                        this.tanksList.Add(new MiddleTank
+                        {
+                            TankWeight = 10 + rnd.Next() % 61
+                        });
                         break;
                     case 2:
-                        this.tanksList.Add(new HeavyTank());
+                        this.tanksList.Add(new HeavyTank
+                        {
+                            TankWeight = 20 + rnd.Next() % 81 
+                        });
                         break;
 
                 }
@@ -40,7 +49,7 @@ namespace Nasledovanie
             foreach (var tank in this.tanksList)
             {
 
-                if (tank is LightTank) // читается почти как чистый инглиш, "если fruit есть Мандарин"
+                if (tank is LightTank) 
                 {
                     LightTankCount += 1;
                 }
@@ -67,27 +76,9 @@ namespace Nasledovanie
                 return;
             }
 
-            // взяли первый фрукт
             var tank = this.tanksList[0];
-            // тут вам не реальность, взятие это на самом деле создание указателя на область в памяти
-            // где хранится экземпляр класса, так что если хочешь удалить, делай это сам
             this.tanksList.RemoveAt(0);
-
-            // ну а теперь предложим покупателю его фрукт
-            if (tank is LightTank)
-            {
-                txtOut.Text = "Лёгкий танк";
-            }
-            else if (tank is MiddleTank)
-            {
-                txtOut.Text = "Средний танк";
-            }
-            else if (tank is HeavyTank)
-            {
-                txtOut.Text = "Тяжёлый танк";
-            }
-
-            // обновим информацию о количестве товара на форме
+            txtOut.Text = tank.GetInfo();
             ShowInfo();
         }
     }
