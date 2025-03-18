@@ -28,62 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnPefill = new Button();
-            btnGet = new Button();
-            txtInfo = new RichTextBox();
-            txtOut = new RichTextBox();
-            SuspendLayout();
+            this.btnPefill = new System.Windows.Forms.Button();
+            this.btnGet = new System.Windows.Forms.Button();
+            this.txtInfo = new System.Windows.Forms.RichTextBox();
+            this.txtOut = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.SuspendLayout();
             // 
             // btnPefill
             // 
-            btnPefill.Location = new Point(12, 12);
-            btnPefill.Name = "btnPefill";
-            btnPefill.Size = new Size(284, 29);
-            btnPefill.TabIndex = 0;
-            btnPefill.Text = "Перезаполнить";
-            btnPefill.UseVisualStyleBackColor = true;
-            btnPefill.Click += btnPefill_Click;
+            this.btnPefill.Location = new System.Drawing.Point(10, 9);
+            this.btnPefill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPefill.Name = "btnPefill";
+            this.btnPefill.Size = new System.Drawing.Size(248, 22);
+            this.btnPefill.TabIndex = 0;
+            this.btnPefill.Text = "Перезаполнить";
+            this.btnPefill.UseVisualStyleBackColor = true;
+            this.btnPefill.Click += new System.EventHandler(this.btnPefill_Click_1);
             // 
             // btnGet
             // 
-            btnGet.Location = new Point(203, 115);
-            btnGet.Name = "btnGet";
-            btnGet.Size = new Size(94, 120);
-            btnGet.TabIndex = 1;
-            btnGet.Text = "Взять";
-            btnGet.UseVisualStyleBackColor = true;
-            btnGet.Click += btnGet_Click;
+            this.btnGet.Location = new System.Drawing.Point(178, 86);
+            this.btnGet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGet.Name = "btnGet";
+            this.btnGet.Size = new System.Drawing.Size(82, 90);
+            this.btnGet.TabIndex = 1;
+            this.btnGet.Text = "Взять";
+            this.btnGet.UseVisualStyleBackColor = true;
+            this.btnGet.Click += new System.EventHandler(this.btnGet_Click_1);
             // 
             // txtInfo
             // 
-            txtInfo.BorderStyle = BorderStyle.None;
-            txtInfo.Location = new Point(12, 47);
-            txtInfo.Name = "txtInfo";
-            txtInfo.ReadOnly = true;
-            txtInfo.Size = new Size(284, 62);
-            txtInfo.TabIndex = 2;
-            txtInfo.Text = "";
+            this.txtInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInfo.Location = new System.Drawing.Point(10, 35);
+            this.txtInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.ReadOnly = true;
+            this.txtInfo.Size = new System.Drawing.Size(248, 46);
+            this.txtInfo.TabIndex = 2;
+            this.txtInfo.Text = "";
             // 
             // txtOut
             // 
-            txtOut.Location = new Point(12, 115);
-            txtOut.Name = "txtOut";
-            txtOut.Size = new Size(185, 120);
-            txtOut.TabIndex = 3;
-            txtOut.Text = "";
+            this.txtOut.Location = new System.Drawing.Point(10, 86);
+            this.txtOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtOut.Name = "txtOut";
+            this.txtOut.Size = new System.Drawing.Size(162, 91);
+            this.txtOut.TabIndex = 3;
+            this.txtOut.Text = "";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(266, 11);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(123, 165);
+            this.richTextBox1.TabIndex = 4;
+            this.richTextBox1.Text = "";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(319, 255);
-            Controls.Add(txtOut);
-            Controls.Add(txtInfo);
-            Controls.Add(btnGet);
-            Controls.Add(btnPefill);
-            Name = "Form1";
-            Text = "Form1";
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(394, 191);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtOut);
+            this.Controls.Add(this.txtInfo);
+            this.Controls.Add(this.btnGet);
+            this.Controls.Add(this.btnPefill);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -92,5 +109,6 @@
         private Button btnGet;
         private RichTextBox txtInfo;
         private RichTextBox txtOut;
+        private RichTextBox richTextBox1;
     }
 }

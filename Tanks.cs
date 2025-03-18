@@ -14,6 +14,7 @@ namespace Nasledovanie
             var str = String.Format("\nВес танка: {0}", this.TankWeight);
             return str;
         }
+        public static Random rnd = new Random();
     }
 
     public class LightTank : Tanks
@@ -31,12 +32,11 @@ namespace Nasledovanie
 
         public static LightTank Generate()
         {
-            var rnd = new Random();
             return new LightTank
             {
-                TankWeight = rnd.Next() % 100,
-                SliceCount = 5 + rnd.Next() % 20, 
-                WithLeaf = rnd.Next() % 2 == 0 
+                TankWeight = 10 + rnd.Next() % 41,
+                ViewRange = 300 + rnd.Next() % 201,
+                CamouflagePercent = 10 + rnd.Next() % 51
             };
         }
     }
@@ -55,12 +55,21 @@ namespace Nasledovanie
             str += String.Format("\nТолщина брони: {0}", this.ArmorThikness);
             return str;
         }
+        public static HeavyTank Generate()
+        {
+            return new HeavyTank
+            {
+                TankWeight = 20 + rnd.Next() % 101,
+                ArmorThikness = 100 + rnd.Next() % 301,
+                typeHeavy = (HeavyTankType)rnd.Next(2)
+            };
+        }
     }
 
-    public enum MiddletankType { universal, sniper, support}
+    public enum MiddleTankType { universal, sniper, support}
     public class MiddleTank : Tanks
     {
-        public MiddletankType typeMiddle = MiddletankType.universal;
+        public MiddleTankType typeMiddle = MiddleTankType.universal;
         public bool HighMobility = true;
 
         public override String GetInfo()
@@ -70,6 +79,15 @@ namespace Nasledovanie
             str += String.Format("\nТип танка: {0}", this.typeMiddle);
             str += String.Format("\nЕсть хорошая мобильность?: {0}", this.HighMobility);
             return str;
+        }
+        public static MiddleTank Generate()
+        {
+            return new MiddleTank
+            {
+                TankWeight = 15 + rnd.Next() % 61,
+                typeMiddle = (MiddleTankType)rnd.Next(3),
+                HighMobility = rnd.Next(2) == 0
+            };
         }
     }
 }
