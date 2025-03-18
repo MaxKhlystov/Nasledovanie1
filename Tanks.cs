@@ -41,11 +41,11 @@ namespace Nasledovanie
         }
     }
 
-    public enum HeavyTankType { ordinary, premium}
+    public enum HeavyTankType { обычный, премиумный}
 
     public class HeavyTank : Tanks
     {
-        public HeavyTankType typeHeavy = HeavyTankType.premium;
+        public HeavyTankType typeHeavy = HeavyTankType.премиумный;
         public int ArmorThikness = 0;
         public override String GetInfo()
         {
@@ -66,10 +66,10 @@ namespace Nasledovanie
         }
     }
 
-    public enum MiddleTankType { universal, sniper, support}
+    public enum MiddleTankType { универсальный, снайперский, поддержка}
     public class MiddleTank : Tanks
     {
-        public MiddleTankType typeMiddle = MiddleTankType.universal;
+        public MiddleTankType typeMiddle = MiddleTankType.универсальный;
         public bool HighMobility = true;
 
         public override String GetInfo()
